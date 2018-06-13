@@ -6,7 +6,7 @@ My code is not elegent, and now it cannot perform very well.
 
 run it by 
 ```
-python option_critic.py
+python optioncritic.py
 ```
 ## Paper
 
