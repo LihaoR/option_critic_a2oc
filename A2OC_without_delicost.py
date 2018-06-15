@@ -129,7 +129,7 @@ class Worker():
         betas_OMG      = np.vstack(betas_omg)
         advantages_U   = discounted_rewards - q_options
         advantages_u   = np.zeros([batch_size])
-        #advantages_OMG = q_options - np.max(q_options)
+        #advantages_OMG = q_options - np.max(q_options)  I think both OK
         advantages_OMG = np.zeros([batch_size, num_options])
         for i in range(batch_size):
             advantages_OMG[i] = q_options[i] - np.max(q_options[i])
