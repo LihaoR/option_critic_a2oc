@@ -6,7 +6,7 @@ My code is not elegent, and now it is not much better than a3c.
 
 run it by 
 ```
-python optioncritic.py
+python a2oc.py
 ```
 ## Paper
 
@@ -14,4 +14,4 @@ python optioncritic.py
 
 ## To do
 
-A2OC.
+A2OC with deliberation cost.
