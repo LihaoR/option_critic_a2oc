@@ -6,11 +6,13 @@ My code is not elegent, and now it is not much better than a3c. Because of sever
 
 run it by 
 ```
-python a2oc.py
+python A2OC_without_delicost.py
 ```
 ## Paper
 
 [The Option-Critic Architecture](https://arxiv.org/abs/1609.05140)
+
+[When Waiting is not an Option : Learning Options with a Deliberation Cost](https://arxiv.org/abs/1709.04571)
 
 ## To do
 
