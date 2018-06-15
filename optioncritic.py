@@ -42,13 +42,16 @@ class OC_Network():
         with tf.variable_scope(scope):
             self.inputs = tf.placeholder(shape=[None,s_size],dtype=tf.float32)
             self.imageIn = tf.reshape(self.inputs,shape=[-1,84,84,1])
-            self.conv1 = slim.conv2d(activation_fn=tf.nn.elu,
-                                     inputs=self.imageIn,num_outputs=16,
+            self.conv1 = slim.conv2d(activation_fn=tf.nn.relu,
+                                     inputs=self.imageIn,num_outputs=32,
                                      kernel_size=[8,8],stride=[4,4],padding='VALID')
-            self.conv2 = slim.conv2d(activation_fn=tf.nn.elu,
-                                     inputs=self.conv1,num_outputs=32,
+            self.conv2 = slim.conv2d(activation_fn=tf.nn.relu,
+                                     inputs=self.conv1,num_outputs=64,
                                      kernel_size=[4,4],stride=[2,2],padding='VALID')
-            hidden = slim.fully_connected(slim.flatten(self.conv2),256,activation_fn=tf.nn.elu)
+            self.conv3 = slim.conv2d(activation_fn=tf.nn.relu,
+                                     inputs=self.conv2,num_outputs=64,
+                                     kernel_size=[3,3],stride=[1,1],padding='VALID')
+            hidden = slim.fully_connected(slim.flatten(self.conv3),512,activation_fn=tf.nn.elu)
 
             policy = slim.fully_connected(hidden ,a_size * num_options,
                                           activation_fn=None,
