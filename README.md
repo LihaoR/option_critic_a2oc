@@ -18,7 +18,3 @@ python a2oc.py
 [The Option-Critic Architecture](https://arxiv.org/abs/1609.05140)
 
 [When Waiting is not an Option : Learning Options with a Deliberation Cost](https://arxiv.org/abs/1709.04571)
-
-## To do
-
-A2OC with deliberation cost.
