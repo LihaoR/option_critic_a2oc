@@ -6,8 +6,13 @@ My code is not elegent, and now it is not much better than a3c. Because of sever
 
 run it by 
 ```
-python A2OC_without_delicost.py
+python a2oc_without_delicost.py
 ```
+with deliberation cost, it helps a lot. 
+```
+python a2oc.py
+```
+
 ## Paper
 
 [The Option-Critic Architecture](https://arxiv.org/abs/1609.05140)
