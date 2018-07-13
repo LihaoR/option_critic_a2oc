@@ -267,7 +267,6 @@ benchmark = gym.benchmark_spec('Atari40M')
 task = benchmark.tasks[3]
 
 tf.reset_default_graph()
-
 if not os.path.exists(model_path):
     os.makedirs(model_path)
     
