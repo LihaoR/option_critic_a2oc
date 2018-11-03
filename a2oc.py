@@ -237,13 +237,13 @@ class Worker():
                 
                 self.episode_rewards.append(episode_reward)
                 self.episode_lengths.append(episode_step_count)
-                if episode_count % 5 == 0 and episode_count != 0:
+                if episode_count % 200 == 0 and episode_count != 0:
                     if self.name == 'worker_0' and episode_count % 5 == 0:
                         print('\n episode: ', episode_count, 'global_step:', GLOBAL_STEP,\
                               'mean episode reward: ', np.mean(self.episode_rewards[-5:]))
 
                     print ('vloss:',v_l, 'ploss:',p_l, 'bloss:',b_l)
-                    if episode_count % 100 == 0 and self.name == 'worker_0':
+                    if episode_count % 5000 == 0 and self.name == 'worker_0':
                         saver.save(sess,self.model_path+'/oc-'+str(episode_count)+'.cptk')
                         print ("Saved Model")
                 episode_count += 1
@@ -264,7 +264,7 @@ num_options = 4
 batch_size = 10
 
 benchmark = gym.benchmark_spec('Atari40M')
-task = benchmark.tasks[3]
+task = benchmark.tasks[1]
 
 tf.reset_default_graph()
 if not os.path.exists(model_path):
