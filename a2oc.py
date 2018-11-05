@@ -250,9 +250,7 @@ class Worker():
 
 
 def get_env(task):
-    env_id = task.env_id
-    env = gym.make(env_id)
-    env = wrap_deepmind(env)
+    env = wrap_deepmind(task)
     return env
 
 gamma = .99 
@@ -263,8 +261,9 @@ model_path = './ocmodel'
 num_options = 4
 batch_size = 10
 
-benchmark = gym.benchmark_spec('Atari40M')
-task = benchmark.tasks[1]
+#benchmark = gym.benchmark_spec('Atari40M')
+#task = benchmark.tasks[1]
+task = gym.make('BreakoutNoFrameskip-v4')
 
 tf.reset_default_graph()
 if not os.path.exists(model_path):
@@ -280,7 +279,7 @@ num_workers = 16
 workers = []
 
 for i in range(num_workers):
-    env = get_env(task)
+    #env = get_env(task)
     workers.append(Worker(env,i,s_size,a_size,trainer,model_path,global_episodes))
 saver = tf.train.Saver(max_to_keep=5)
 
