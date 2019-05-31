@@ -260,7 +260,7 @@ def get_env(task):
 gamma = .99 
 ita   = 0.01
 s_size = 28224
-load_model = True
+load_model = False
 model_path = './ocmodel'
 num_options = 4
 batch_size = 10
